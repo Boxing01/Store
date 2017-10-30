@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+//使用greendao
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "boxing.com.store"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 8
+        versionName "8.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+        }
+    }
+
+    //greendao配置
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 28
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:25.4.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //greendao依赖
+    compile 'org.greenrobot:greendao:3.2.0'
+
+    compile 'com.android.support:design:25.4.0'
+}
