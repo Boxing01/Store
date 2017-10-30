@@ -30,7 +30,6 @@ public class GoodsAdapter extends BaseRecyclerAdapter<Goods>{
     private class MyViewHolder extends BaseViewHolder<Goods> {
         private TextView name;
         private TextView price;
-
         private TextView num;
         private TextView time;
 
