@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.gradle/
+
+Store.iml
+Would skip repository app/src/main/java/boxing/com/store
+app/app.iml
+
+app/proguard-rules.pro
+
+build/
+gradle.properties
+
+gradlew
+gradlew.bat
+local.properties
+
+.idea/
+
